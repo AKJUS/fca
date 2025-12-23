@@ -25,6 +25,19 @@ Few-Class-Arena (FCA) is an open platform written in PyTorch developed on top of
 ![fca_fig1](https://github.com/fewclassarena/fca/assets/165857143/c9f7ed91-c04d-49ce-a814-8d2eda18c353)
 Top-1 accuracies of various scales of ResNet, whose model sizes are shown in the legend, and whose plots vary from dark to light by decreasing size. Plots range along number of classes N<sub>CL</sub> from the full ImageNet size (1000) down to the _Few-Class Regime_. Each model is tested on 5 subsets whose N<sub>CL</sub> classes are randomly sampled from the original 1000 classes. (a) Plots for sub-models trained on subsets of classes (blue) and full models trained on all 1000 classes (red). (b) Zoomed window shows the standard deviation of subset’s accuracies is much smaller than for the full model. (c.1) Full model accuracies drop when N<sub>CL</sub> decreases. (c.2) Full model accuracies increase as model scales up in the _Few-Class Regime_. (d.1) Sub-model accuracies grow as N<sub>CL</sub> decreases. (d.2) Sub-model accuracies do not increase when model scales up in the _Few-Class Regime_.
 
+### Similarity-Based Silhouette Score (SimSS) as a Novel Dataset Difficulty Metric:
+<img width="525" height="79" alt="SimSS" src="https://github.com/user-attachments/assets/19ec5b30-015d-4f2a-985a-6ec78b9310d3" />
+
+Captures both
+
+(1) __tightness__ of a class cluster
+<img width="672" height="85" alt="alpha" src="https://github.com/user-attachments/assets/84804246-644f-4a93-aa67-ff1e03b4893d" />
+
+(2) __distance__ to other classes
+<img width="705" height="88" alt="beta_p" src="https://github.com/user-attachments/assets/26e52fbb-6f4b-46b2-b74c-e11578b72813" />
+
+
+
 ![fca_fig5](https://github.com/fewclassarena/fca/assets/165857143/ef315361-21a2-464e-9f1d-fd77d42164cb)
 Pearson correlation coefficient (r) between DCN and SimSS when N<sub>Cl</sub> ∈ {2, 3, 4, 5, 10, 100}. DCN-Sub (blue squares) is more highly correlated than DCN-Full (red diamonds) with SimSS using both similarity base functions of CLIP (dashed line) and DINOv2 (solid line) with r ≥ 0.88.
 
